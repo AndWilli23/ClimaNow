@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
+
 import { CardItem, CardLista, CardNomeLocal, IconeClimatico
 } from "./Card.style";
 

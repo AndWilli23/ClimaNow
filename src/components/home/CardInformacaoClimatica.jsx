@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-
 import { useState } from "react";
 import { dadosClimaticosDoLocal } from "../../module/api";
 import MontagemDoCard from "./MontagemDoCard";
