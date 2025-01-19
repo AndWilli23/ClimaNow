@@ -1,0 +1,48 @@
+.formPesquisa{
+    padding-right: 40rem; 
+    width: 100%; 
+    font-family: Lora, serif
+}
+
+.containerCardPrincipal{ 
+    width: 35%; 
+    height:26%; 
+    margin:4rem; 
+    font-family: Lora, "serif"; 
+    color: #5c4033;
+}
+
+@media (max-width: 1150px) {
+    .formPesquisa{
+        padding-right: 20rem; 
+    }
+}
+
+@media (max-width: 1000px) {
+    .containerCardPrincipal{
+        width: 55%; 
+        height:26%; 
+    }
+}
+
+@media (max-width: 620px) {
+    .formPesquisa{
+        padding-right: 10rem; 
+    }
+
+    .containerCollaped{
+       visibility: hidden;
+    }  
+}
+@media (max-width: 500px) {
+    .formPesquisa{
+        padding-right: 5rem; 
+    }
+
+    .containerCardPrincipal{
+        width: 75%; 
+        height:26%; 
+    }
+}
+
+

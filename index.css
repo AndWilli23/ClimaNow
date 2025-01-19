@@ -1,10 +1,9 @@
 body{
     padding: 0;
     margin: 0;
-    color: #f5f5f5;
-    background-image: url(./public/imagemPrincipa.jpg);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    font-family: "Lora", serif; 
+    height: 100vh;
+    color: hsl(52, 100%, 50%);
+    
+    background-color: rgb(0, 120, 224);
 }
+
