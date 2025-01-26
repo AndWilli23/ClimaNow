@@ -12,6 +12,12 @@
     color: #5c4033;
 }
 
+@media (min-width: 1800px) {
+    .containerCardsClimaticosDuranteSemana{
+        justify-content: space-around;
+    }
+}
+
 @media (max-width: 1150px) {
     .formPesquisa{
         padding-right: 20rem; 
@@ -34,6 +40,15 @@
        visibility: hidden;
     }  
 }
+
+@media (max-width: 20000px) {
+
+    .containerCollaped{
+       visibility: hidden;
+    }  
+
+    
+}
 @media (max-width: 500px) {
     .formPesquisa{
         padding-right: 5rem; 
@@ -43,6 +58,11 @@
         width: 75%; 
         height:26%; 
     }
+
+    .containerCardsClimaticosDuranteSemana{
+        margin: 0;
+    }
+
 }
 
 

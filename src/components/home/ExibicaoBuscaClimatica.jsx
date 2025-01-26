@@ -11,11 +11,12 @@ import CardPrincipal from "./CardPrincipal";
 import "./formSearch.css"
 
 
-const CardClima = () => {
+const ExibicaoBuscaClimatica = () => {
 
     const [dadosClimaticos, setDadosClimaticos] = useState(null);
     const [dadosClimaticosDaSemana, setDadosClimaticosDaSemana] = useState(null);
     const [localDeBusca, setLocalDeBusca] = useState("");
+    const [carregando, setCarregando] = useState(false)
 
     const fetchDados = async () => {
         try {
@@ -46,10 +47,17 @@ const CardClima = () => {
         setLocalDeBusca(evento.target.value);  
     };
 
+    const handleCarregando = () => {
+        if (dadosClimaticos) {
+            setCarregando(true)
+            return <p>Carregando...</p>
+        }
+    }
+
             
     return(
         <>
-            <main className="d-flex flex-column align-items-center" style={{backgroundColor: "#f1eee6", color: "#5c4033"}}>
+            <main className="d-flex flex-column align-items-center a" style={{backgroundColor: "#f1eee6", color: "#5c4033"}}>
 
                 <div className="d-flex justify-content-center mt-5 gap-3" >
                     <Form >
@@ -82,8 +90,8 @@ const CardClima = () => {
                     chuva={(dadosClimaticos.probabilidadeChuva * 100).toFixed()}
                 />
                 
-                <div style={{ overflowX: "auto", width:"80vw"}}>
-                    <div  className="d-flex gap-5" style={{ minWidth: "100%" }} >
+                <div  style={{ overflowX: "auto", width:"80vw"}}>
+                    <div className=" containerCardsClimaticosDuranteSemana d-flex gap-5 " style={{ minWidth: "100%" }} >
                         {dadosClimaticosDaSemana.datas.map((dado, index) => (
                             <div style={{ flexShrink: 0, width: "200px"}} key={index}>
                                 <CardsClimaDuranteSemana
@@ -97,13 +105,16 @@ const CardClima = () => {
                         ))} 
                     </div>
                 </div>
+                
+                
 
-                <GraficoVariacaoClima 
-                    temperaturaMax={dadosClimaticosDaSemana.listaDeTemperaturasMaximas} 
-                    temperaturaMin={dadosClimaticosDaSemana.listaDeTemperaturasMinimas}
-                    dias={dadosClimaticosDaSemana.datas}/>
+                    <GraficoVariacaoClima 
+                        temperaturaMax={dadosClimaticosDaSemana.listaDeTemperaturasMaximas} 
+                        temperaturaMin={dadosClimaticosDaSemana.listaDeTemperaturasMinimas}
+                        dias={dadosClimaticosDaSemana.datas}/>
 
-                </>
+
+                    </>
                 ) : (
                     <>
                         <h1 className="m-5 bg-warning-subtle p-4 rounded text-decoration-underline text-warning" style={{fontFamily: "Lora, serif"}}>Faça sua pesquisa climática!!!</h1>
@@ -117,7 +128,7 @@ const CardClima = () => {
     )
 }
 
-export default CardClima;
+export default ExibicaoBuscaClimatica;
 
 
 

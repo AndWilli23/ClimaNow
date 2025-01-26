@@ -60,7 +60,7 @@ const GraficoVariacaoClima = ({ temperaturaMax, temperaturaMin, dias }) => {
     },
   };
   return(
-    <div style={{ width: '75%', height: '100%', margin: "6rem 0 0 0",  color: "#5c4033"}}>
+    <div style={{ width: '75%', height: '200%', margin: "6rem 0 0 0",  color: "#5c4033"}}>
       <Line data={data} options={options} width={undefined} height={undefined} marginTop={undefined} color={undefined}/>
     </div>  
   )
